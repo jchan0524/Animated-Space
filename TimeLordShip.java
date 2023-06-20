@@ -9,13 +9,26 @@ import java.awt.*;
  */
 public class TimeLordShip extends AnimatedObject {
 
+	// x and y coords of the spaceship
 	public int x;
 	public int y;
+
+	// The amount of times the spaceship has moved
 	private int times;
+
+	//List to store the different movements
 	private ArrayList moveList; 
+
+	// Current movement
 	private Movement current;
+
+	// Index variable for movements
 	private int i;
+
+	// Graphics2D object for drawing
 	private Graphics2D g2;
+
+	// Color of the spaceship
 	private Color mine;
 	
 	/**
@@ -77,15 +90,14 @@ public class TimeLordShip extends AnimatedObject {
 		}
 		}
 	
-	/**
-	 * This creates a new movement that the SpaceShip will do.
-	 * It will repeat the sequence over and over.
-	 * Possible movements (type) include: moveUp, moveDown, moveLeft,
-	 * moveRight, and pause.
-	 * @param type The type of movement
-	 * @param t The duration of this movement
-	 * @param s The speed of the motion.
-	 */
+	 /**
+     * Adds a new movement for the spaceship.
+     * The sequence of movements will repeat over and over.
+     *
+     * @param type The type of movement (e.g., "moveUp", "moveDown", "moveLeft", "moveRight", "pause").
+     * @param t    The duration of this movement.
+     * @param s    The speed of the motion.
+     */
 	public void addMovement(String type, int t, int s){
 		Movement move=new Movement(type, t, s);
 		moveList.add(move);
@@ -93,8 +105,10 @@ public class TimeLordShip extends AnimatedObject {
 	}
 	
 	/**
-	 * Part of the animation, this draws the Object.
-	 */
+     * Part of the animation, this draws the spaceship.
+     *
+     * @param g Graphics object used for drawing.
+     */
 	public void draw(Graphics g){
 		g2=(Graphics2D)g;
 		g2.setColor(Color.blue);

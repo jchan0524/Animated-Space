@@ -5,9 +5,9 @@ import java.awt.*;
 import javax.swing.*;
 
 /**
- * This class is the main class
- * @author Justin Chan
- * @version 1.0
+ * The Main class is the main entry point for the Animated Space program.
+ * It sets up the JFrame, adds animated objects to the Space, and starts the
+ * animation.
  */
 
 public class Main extends JFrame {
@@ -16,15 +16,22 @@ public class Main extends JFrame {
     public static final int HEIGHT = 600;
 
     public Main() {
+        // Set the size of the JFrame
         this.setSize(WIDTH, HEIGHT);
+
+        // Create a space object
         Space solarSystem = new Space();
+
+        // Add the Space object to the content pane of the JFrame.
         this.getContentPane().add(solarSystem, BorderLayout.CENTER);
 
-        // Animation Code
-
-        // Death Star
+        // Start the animation of the Space.
         solarSystem.animate();
+
+        // Create and add Death Star
         DeathStar DeathBall = new DeathStar(150, 100);
+
+        // Movements to the Death Star.
         DeathBall.addMovement("pause", 400, 2);
         DeathBall.addMovement("pause", 50, 2);
         DeathBall.addMovement("moveRight", 450, 1);
@@ -32,9 +39,13 @@ public class Main extends JFrame {
         DeathBall.addMovement("pause", 70, 10);
         DeathBall.addMovement("moveUp", 450, 4);
         DeathBall.addMovement("moveLeft", 450, 100);
+
         solarSystem.addAnimatedObject(DeathBall);
-        // Starship Enterprise
+
+        // Create and add animated Starship Enterprise.
         StarShip enterprise = new StarShip(600, 100);
+
+        // Add movements to the Death Star.
         enterprise.addMovement("moveLeft", 400, 2);
         enterprise.addMovement("pause", 50, 2);
         enterprise.addMovement("moveRight", 400, 4);
@@ -42,16 +53,22 @@ public class Main extends JFrame {
         enterprise.addMovement("moveLeft", 400, 4);
         enterprise.addMovement("moveRight", 400, 2);
         enterprise.addMovement("pause", 200, 2);
+
         solarSystem.addAnimatedObject(enterprise);
-        // Tardis
+
+        // Create and add animated TimeLordShip Tardis.
         TimeLordShip tardis = new TimeLordShip(400, 500);
+
+        // Add movements to the TimeLordShip Tardis
         tardis.addMovement("moveLeft", 800, 100);
         tardis.addMovement("moveRight", 800, 100);
         tardis.addMovement("pause", 50, 100);
         tardis.addMovement("moveUp", 800, 100);
         tardis.addMovement("moveDown", 800, 100);
+
         solarSystem.addAnimatedObject(tardis);
-        // solar system
+
+        // Add planets and suns to the solar system
         solarSystem.setStellarAnimation();
         solarSystem.addPlanet(200, 300, 250);
         solarSystem.addSun(500, 325, 300);
@@ -88,12 +105,20 @@ public class Main extends JFrame {
         dwarf.addMovement("moveUp", 450, 4);
         solarSystem.addAnimatedObject(dwarf);
 
+        // Set the default close operation for the JFrame
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        // Make the JFrame visable
         this.setVisible(true);
 
     }
-    public static void main(String[] args){
-        new Main(); 
+
+    /**
+     * Main method that serves as the entry point for the program
+     */
+    public static void main(String[] args) {
+        // Create a new instance of Main which initializes and starts the program
+        new Main();
     }
 
 }
