@@ -7,6 +7,9 @@ The Space Animation Program is a Java-based application that simulates a space e
 ## Image
 
 
+<img width="790" alt="animated-space" src="https://github.com/jchan0524/Animated-Space/assets/117332299/a6082e5f-920a-4b60-92af-da6920dcdad5">
+
+
 ## Files
 
 ### `AnimatedObject.java`
