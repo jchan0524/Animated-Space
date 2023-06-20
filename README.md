@@ -4,6 +4,9 @@
 
 The Space Animation Program is a Java-based application that simulates a space environment with stars, suns, a starship, a Time Lord's spaceship, planets, and a Death Star, all moving in an animated space. The program uses Java's Swing library to create the animation.
 
+## Image
+
+
 ## Files
 
 ### `AnimatedObject.java`
